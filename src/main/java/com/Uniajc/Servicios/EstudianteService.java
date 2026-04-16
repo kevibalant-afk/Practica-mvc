@@ -1,7 +1,7 @@
 package com.Uniajc.Servicios;
 
-import com.uniajc.dao.EstudianteDao;
-import com.uniajc.modelo.Estudiantes;
+import com.Uniajc.Dao.EstudianteDao;
+import com.Uniajc.Modelo.Estudiantes;
 import java.util.List;
 
 public class EstudianteService {
@@ -12,7 +12,7 @@ public class EstudianteService {
         this.estudianteDao = new EstudianteDao(); // Inicializamos el DAO para poder usarlo en los métodos del servicio
     }
 
-    public void registrarEstudiante(Estudiante estudiante) {
+    public void registrarEstudiante(Estudiantes estudiante) {
         // verificar que el email tenga un formato válido o que los campos no estén vacíos
         
         if (estudiante.getNombre() == null || estudiante.getNombre().isEmpty() ||
@@ -24,11 +24,10 @@ public class EstudianteService {
         estudianteDao.guardar(estudiante);
     }
 
-    public List<Estudiante> obtenerTodosLosEstudiantes() {
+    public List<Estudiantes> obtenerTodosLosEstudiantes() {
         // Llamar al método del DAO para obtener la lista de estudiantes desde la base de datos
         return estudianteDao.obtenerTodos();
     }
 }
 
 
-}
