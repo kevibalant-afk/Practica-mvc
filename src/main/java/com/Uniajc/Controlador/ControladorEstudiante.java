@@ -3,9 +3,9 @@ package com.Uniajc.Controlador;
 
 import java.util.List;
 
-import com.uniajc.modelo.Estudiantes;
-import com.uniajc.servicios.EstudianteService;
-import com.uniajc.vista.VistaEstudiante;
+import com.Uniajc.Modelo.Estudiantes;
+import com.Uniajc.Servicios.EstudianteService;
+import com.Uniajc.Vista.VistaEstudiante;
 
 public class ControladorEstudiante {
 
@@ -22,7 +22,7 @@ public class ControladorEstudiante {
         // Por ejemplo, verificar que el email tenga un formato válido o que los campos no estén vacíos
 
         try {
-            Estudiante estudiante = vista.solicitarDatosEstudiante();
+            Estudiantes estudiante = vista.solicitarDatosEstudiantes();
 
             if (estudiante != null) {
                 servicio.registrarEstudiante(estudiante);
