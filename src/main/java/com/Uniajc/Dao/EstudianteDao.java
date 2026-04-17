@@ -9,13 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.uniajc.config.ConexionPostgresDatabase;
-import com.uniajc.modelo.Estudiantes;
+import com.Uniajc.config.ConexionPostgresDatabase;
+import com.Uniajc.Modelo.Estudiantes;
 
 public class EstudianteDao {
    
 
-    public void guardar(Estudiante estudiante) {
+    public void guardar(Estudiantes estudiante) {
                
         String sql = "INSERT INTO \"practica-mvc\".estudiantes (Name, Lastname, Email) VALUES (?, ?, ?)";
 
@@ -35,8 +35,8 @@ public class EstudianteDao {
 
     }
 
-    public List<Estudiante> obtenerTodos() {
-        List<Estudiante> estudiantes = new ArrayList<>();
+    public List<Estudiantes> obtenerTodos() {
+        List<Estudiantes> estudiantes = new ArrayList<>();
 
         String sql = "SELECT id, name, lastname, email FROM \"practica-mvc\".estudiantes";
 
@@ -45,7 +45,7 @@ public class EstudianteDao {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                Estudiante estudiante = new Estudiante();
+                Estudiantes estudiante = new Estudiantes();
                 estudiante.setId(rs.getInt("id"));
                 estudiante.setNombre(rs.getString("name"));
                 estudiante.setApellido(rs.getString("lastname"));

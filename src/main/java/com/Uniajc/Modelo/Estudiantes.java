@@ -7,9 +7,9 @@ public class Estudiantes {
     private String apellido;
     private String email;
 
-    public Estudiante() { }
+    public Estudiantes() { }
 
-    public Estudiante(int id, String nombre, String apellido, String email) {
+    public Estudiantes(int id, String nombre, String apellido, String email) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
