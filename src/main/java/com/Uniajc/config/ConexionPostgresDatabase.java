@@ -3,39 +3,43 @@ package com.Uniajc.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
+//import java.io.File;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
+//import java.io.IOException;
+//import java.util.Properties;
 
 public class ConexionPostgresDatabase {
     private static Connection connection = null;
 
     public static Connection getConnection() {
         // Usamos un objeto Properties para cargar los parámetros de conexión desde un archivo de configuración
-        Properties properties = new Properties();
+       // Properties properties = new Properties();
         if (connection == null) {
             try {
                 // Cargar las propiedades desde el archivo config-postgres.properties
                 properties.load(new FileInputStream(new File("config.properties")));
 
                 // Definir los parámetros de conexión
-                String url = properties.getProperty("db.url");
-                String user = properties.getProperty("db.user");
-                String password = properties.getProperty("db.password");
-                
+                //String url = properties.getProperty("db.url");
+                //String user = properties.getProperty("db.user");
+                //String password = properties.getProperty("db.password");
+               String url = "jdbc:postgresql:ep-wispy-pine-amxvoawj-pooler.c-5.us-east-1.aws.neon.tech:5432/neondb"
+               String user = "neondb_owner"
+               String password = "npg_vuMyGcbBN90X"
+
+
                 // Establecer la conexión
                 connection = DriverManager.getConnection(url, user, password);
                 System.out.println("Conexión a base de datos exitosa.");
             } catch (SQLException error) {
                 System.out.println("Failed to establish database connection. " + error.getMessage());
                 error.printStackTrace();
-            } catch (FileNotFoundException error) {
+            //} catch (FileNotFoundException error) {
                 error.printStackTrace();
-            } catch (IOException error) {
+            //} catch (IOException error) {
                 error.printStackTrace();
-            }
+            //}
         }
         return connection;
     }
@@ -51,4 +55,5 @@ public class ConexionPostgresDatabase {
             }
         }
     }
+}
 }
