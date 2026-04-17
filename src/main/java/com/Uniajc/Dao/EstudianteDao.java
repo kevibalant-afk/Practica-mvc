@@ -23,8 +23,8 @@ public class EstudianteDao {
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
             // Establecer los parámetros del PreparedStatement con los datos del estudiante
-            pstmt.setString(1, estudiante.getNombre());
-            pstmt.setString(2, estudiante.getApellido());
+            pstmt.setString(1, estudiante.getName());
+            pstmt.setString(2, estudiante.getLastName());
             pstmt.setString(3, estudiante.getEmail());
 
             // Ejecutar la consulta para insertar el estudiante en la base de datos
@@ -47,8 +47,8 @@ public class EstudianteDao {
             while (rs.next()) {
                 Estudiantes estudiante = new Estudiantes();
                 estudiante.setId(rs.getInt("id"));
-                estudiante.setNombre(rs.getString("name"));
-                estudiante.setApellido(rs.getString("lastname"));
+                estudiante.setName(rs.getString("name"));
+                estudiante.setLastName(rs.getString("lastname"));
                 estudiante.setEmail(rs.getString("email"));
                 estudiantes.add(estudiante);
             }

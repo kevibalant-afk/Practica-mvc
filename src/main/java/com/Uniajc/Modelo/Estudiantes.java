@@ -3,17 +3,17 @@ package com.Uniajc.Modelo;
 public class Estudiantes {
      
     private int id;
-    private String nombre;
-    private String apellido;
-    private String email;
+    private String Name;
+    private String LastName;
+    private String Email;
 
     public Estudiantes() { }
 
-    public Estudiantes(int id, String nombre, String apellido, String email) {
+    public Estudiantes(int id, String Name, String LastName, String Email) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
+        this.Name = Name;
+        this.LastName = LastName;
+        this.Email = Email;
     }
 
     public int getId() {
@@ -24,30 +24,28 @@ public class Estudiantes {
         this.id = id;
     }
   
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return Name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getLastName() {
+        return LastName;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLastName(String aLastName) {
+        this.LastName = LastName;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
 }
-
-

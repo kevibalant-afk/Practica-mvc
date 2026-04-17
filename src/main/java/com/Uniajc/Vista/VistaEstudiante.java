@@ -31,7 +31,7 @@ public class VistaEstudiante {
 
     // La manera sencilla de mostrar los detalles de un estudiante es a través de un método que reciba un objeto Estudiante y acceda a sus propiedades para mostrarlas. Aquí te dejo un ejemplo de cómo podrías implementar esto:
     public void mostrarDetallesEstudiante(Estudiantes estudiante) {
-        System.out.println("ID: " + estudiante.getId() + ", Nombre: " + estudiante.getNombre() + ", Apellido: " + estudiante.getApellido() + ", Correo: " + estudiante.getEmail());
+        System.out.println("ID: " + estudiante.getId() + ", Nombre: " + estudiante.getName() + ", Apellido: " + estudiante.getLastName() + ", Correo: " + estudiante.getEmail());
     }
 
     public void mostrarTodosLosEstudiantes(List<Estudiantes> estudiantes) {

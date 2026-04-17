@@ -15,7 +15,7 @@ public class EstudianteService {
     public void registrarEstudiante(Estudiantes estudiante) {
         // verificar que el email tenga un formato válido o que los campos no estén vacíos
         
-        if (estudiante.getNombre() == null || estudiante.getNombre().isEmpty() ||
+        if (estudiante.getName() == null || estudiante.getName().isEmpty() ||
         estudiante.getEmail() == null || estudiante.getEmail().isEmpty()) {
             throw new IllegalArgumentException("El campo nombre y correo son obligatorios.");
         }
@@ -29,6 +29,3 @@ public class EstudianteService {
         return estudianteDao.obtenerTodos();
     }
 }
-
-
-
