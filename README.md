@@ -1,41 +1,47 @@
-# Practica-mvc
-graph TD
-    subgraph Presentation
-        V[VistaEstudiante]
-    end
+# Diagrama del ecosistema
+classDiagram 
+
+class Estudiantes {
     
-    subgraph Controller
-        C[ControladorEstudiante]
-    end
+    +int id_estudiante
+    +string Nombre
+    + string Apellido
+    + string Email
+}
+
+class Docente {
+
+    +int  id_docente
+    + string Nombre
+    + string Especialidad
+}
+
+class Materia {
     
-    subgraph Service
-        S[EstudianteService]
-    end
+    +int id_materia
+    + string Nombre_Materia
+    + int Creditos
+
+}
+class Grupo {
     
-    subgraph Data Access
-        D[EstudianteDao]
-    end
-    
-    subgraph Model
-        M[Estudiantes]
-    end
-    
-    subgraph Database
-        DB[(PostgreSQL)]
-        CP[ConexionPostgresDatabase]
-    end
-    
-    V --> C
-    C --> S
-    S --> D
-    D --> M
-    D --> CP
-    CP --> DB
-    
-    style V fill:#e1f5fe
-    style C fill:#fff3e0
-    style S fill:#e8f5e9
-    style D fill:#fce4ec
-    style M fill:#f3e5f5
-    style DB fill:#eceff1
-    style CP fill:#eceff1
+    +int id_grupo
+    +int id_docente
+    +int id_materia
+    +string aula
+    +string horario
+}
+
+class Instripcion_Curso {
+
+    +int id_inscripcion
+    +int id_estudiante
+    +int id_grupo
+    +float nota_final
+    +string estado
+}
+
+Estudiante "1" -- "*" Inscripcion_Curso : se inscribe
+Grupo "1" -- "*" Inscripcion_Curso : contiene alumnos
+Materia "1" -- "*" Grupo : se dicta en
+Docente "1" -- "*" grupo : imparte
