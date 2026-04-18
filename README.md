@@ -1,4 +1,5 @@
 # Diagrama del ecosistema
+```mermaid
 classDiagram 
 
 class Estudiantes {
@@ -32,7 +33,7 @@ class Grupo {
     +string horario
 }
 
-class Instripcion_Curso {
+class Inscripcion_Curso {
 
     +int id_inscripcion
     +int id_estudiante
@@ -45,3 +46,4 @@ Estudiante "1" -- "*" Inscripcion_Curso : se inscribe
 Grupo "1" -- "*" Inscripcion_Curso : contiene alumnos
 Materia "1" -- "*" Grupo : se dicta en
 Docente "1" -- "*" grupo : imparte
+```

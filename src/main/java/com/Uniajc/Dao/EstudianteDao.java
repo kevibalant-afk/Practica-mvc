@@ -16,8 +16,9 @@ public class EstudianteDao {
    
 
     public void guardar(Estudiantes estudiante) {
+        //INSERT INTO "Practica-MVC"."Estudiantes" ("Name","LastName", "Email") VALUES('Kevin','Balanta', 'pepito@email.com')
                
-        String sql = "INSERT INTO \"practica-mvc\".estudiantes (Name, Lastname, Email) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO \"Practica-MVC\".estudiantes (Name, LastName, Email) VALUES (?, ?, ?)";
 
         try (Connection conn = ConexionPostgresDatabase.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
