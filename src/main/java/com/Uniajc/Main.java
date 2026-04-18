@@ -7,7 +7,7 @@ import com.Uniajc.Servicios.EstudianteService;
 import com.Uniajc.Vista.VistaEstudiante;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Practica MVC - Sistema academico Uniajc!");
+        System.out.println("Practica MVC");
        
 
         VistaEstudiante vista = new VistaEstudiante();
@@ -18,7 +18,7 @@ public class Main {
 
       controlador.mostrarTodosLosEstudiantes();
 
-        controlador.registrarEstudiante(); 
+    controlador.registrarEstudiante(); 
 
         controlador.mostrarTodosLosEstudiantes(); 
     }

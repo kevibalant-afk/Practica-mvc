@@ -47,4 +47,3 @@ Estudiante "1" -- "*" Inscripcion_Curso : se inscribe
     Materia "1" -- "*" Grupo : se dicta en
     Docente "1" -- "*" Grupo : imparte
 ```
-```
