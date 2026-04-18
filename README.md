@@ -42,10 +42,8 @@ class Inscripcion_Curso {
     +string estado
 }
 
-Estudiantes "1" -- "*"
- Inscripcion_Curso : se inscribe
-    Grupo "1" -- "*" 
-Inscripcion_Curso : contiene alumnos
+Estudiantes "1" -- "*"Inscripcion_Curso : se inscribe
+    Grupo "1" -- "*" Inscripcion_Curso : contiene alumnos
     Materia "1" -- "*" Grupo : se dicta en
     Docente "1" -- "*" Grupo : imparte
 ```
