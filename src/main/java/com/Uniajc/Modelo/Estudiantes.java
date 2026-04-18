@@ -36,7 +36,7 @@ public class Estudiantes {
         return LastName;
     }
 
-    public void setLastName(String aLastName) {
+    public void setLastName(String LastName) {
         this.LastName = LastName;
     }
 

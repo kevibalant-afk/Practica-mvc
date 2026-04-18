@@ -29,8 +29,8 @@ public class EstudianteDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
+    
 
     public List<Estudiantes> obtenerTodos() {
         List<Estudiantes> estudiantes = new ArrayList<>();
