@@ -22,12 +22,11 @@ public class EstudianteDao {
         try (Connection conn = ConexionPostgresDatabase.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            // Establecer los parámetros del PreparedStatement con los datos del estudiante
+                
             pstmt.setString(1, estudiante.getName());
             pstmt.setString(2, estudiante.getLastName());
             pstmt.setString(3, estudiante.getEmail());
 
-            // Ejecutar la consulta para insertar el estudiante en la base de datos
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

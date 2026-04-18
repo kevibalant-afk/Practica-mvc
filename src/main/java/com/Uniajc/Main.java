@@ -12,17 +12,16 @@ public class Main {
         System.out.println("Conexión obtenida: " + (conexion != null ? "Exitosa" : "Fallida"));
         ConexionPostgresDatabase.closeConnection();
 
-        //VistaEstudiante vista = new VistaEstudiante();
-        //EstudianteService estudianteService = new EstudianteService();
+       // VistaEstudiante vista = new VistaEstudiante();
+       // EstudianteService estudianteService = new EstudianteService();
 
-        // Crear el controlador y pasarle la vista y el servicio
+      
         //ControladorEstudiante controlador = new ControladorEstudiante(vista, estudianteService);
 
-      //controlador.mostrarTodosLosEstudiantes(); // Llamar al método para mostrar todos los estudiantes antes de registrar uno nuevo
+      //controlador.mostrarTodosLosEstudiantes();
 
-        //controlador.registrarEstudiante(); // Llamar al método para registrar un estudiante
+        //controlador.registrarEstudiante(); 
 
-        //controlador.mostrarTodosLosEstudiantes(); // Llamar al método para mostrar todos los estudiantes después de registrar uno nuevo
-       
+        //controlador.mostrarTodosLosEstudiantes(); 
     }
 }
