@@ -43,7 +43,8 @@ class Inscripcion_Curso {
 }
 
 Estudiante "1" -- "*" Inscripcion_Curso : se inscribe
-Grupo "1" -- "*" Inscripcion_Curso : contiene alumnos
-Materia "1" -- "*" Grupo : se dicta en
-Docente "1" -- "*" grupo : imparte
+    Grupo "1" -- "*" Inscripcion_Curso : contiene alumnos
+    Materia "1" -- "*" Grupo : se dicta en
+    Docente "1" -- "*" Grupo : imparte
+```
 ```
