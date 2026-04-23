@@ -5,17 +5,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
 public class ConexionPostgresDatabase {
-    private static Connection connection = null;
+    
 
     public static Connection getConnection() {
         // Usamos un objeto Properties para cargar los parámetros de conexión desde un archivo de configuración
         Properties properties = new Properties();
-        if (connection == null) {
+       
             try {
                 // Cargar las propiedades desde el archivo config-postgres.properties
                 properties.load(new FileInputStream(new File("config.properties")));
@@ -28,29 +27,15 @@ public class ConexionPostgresDatabase {
               
 
                 // Establecer la conexión
-                connection = DriverManager.getConnection(url, user, password);
-                System.out.println("Conexión a base de datos exitosa.");
+                return DriverManager.getConnection(url, user, password);
+                //System.out.println("Conexión a base de datos exitosa.");
             } catch (SQLException error) {
-                System.out.println("Failed to establish database connection. " + error.getMessage());
-               } catch (FileNotFoundException error) {
-                error.printStackTrace();
-            } catch (IOException error) {
-                error.printStackTrace();
-            } 
+            System.out.println("Error de SQL: " + error.getMessage());
+        } catch (IOException error) {
+            error.printStackTrace();
         }
-        return connection;
-    }
-
-    public static void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-                System.out.println("Database connection closed successfully.");
-            } catch (SQLException e) {
-                e.printStackTrace();
-                System.out.println("Failed to close database connection. " + e.getMessage());
-            }
-        }
+        return null;
     }
 }
+   
 

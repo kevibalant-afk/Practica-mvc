@@ -1,28 +1,31 @@
 package com.Uniajc;
-import java.sql.Connection;
 
-import com.Uniajc.config.ConexionPostgresDatabase;
+import com.Uniajc.Controlador.ControladorDocente;
+import com.Uniajc.Servicios.DocenteService;
+import com.Uniajc.Vista.VistaDocente;
 //import com.Uniajc.Controlador.ControladorEstudiante;
 //import com.Uniajc.Servicios.EstudianteService;
 //import com.Uniajc.Vista.VistaEstudiante;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Practica MVC - Sistema academico Uniajc!");
-        Connection conexion = ConexionPostgresDatabase.getConnection();
-        System.out.println("Conexión obtenida: " + (conexion != null ? "Exitosa" : "Fallida"));
-        ConexionPostgresDatabase.closeConnection();
+        System.out.println("Practica MVC");
 
-        //VistaEstudiante vista = new VistaEstudiante();
-        //EstudianteService estudianteService = new EstudianteService();
+        VistaDocente vistaDocente = new VistaDocente();
+        DocenteService docenteService = new DocenteService();  
 
-        // Crear el controlador y pasarle la vista y el servicio
-        //ControladorEstudiante controlador = new ControladorEstudiante(vista, estudianteService);
+        ControladorDocente controladorDocente = new ControladorDocente(vistaDocente, docenteService);
+        controladorDocente.mostrarTodosLosDocentes();
+        controladorDocente.registrarDocente();
+        
+  //      VistaEstudiante vistaEstudiante = new VistaEstudiante();
+    //    EstudianteService estudianteService = new EstudianteService();
 
-      //controlador.mostrarTodosLosEstudiantes(); // Llamar al método para mostrar todos los estudiantes antes de registrar uno nuevo
+      
+      //  ControladorEstudiante controlador = new ControladorEstudiante(vistaEstudiante, estudianteService);
 
-        //controlador.registrarEstudiante(); // Llamar al método para registrar un estudiante
+  //    controlador.mostrarTodosLosEstudiantes();
+//  controlador.registrarEstudiante(); 
 
-        //controlador.mostrarTodosLosEstudiantes(); // Llamar al método para mostrar todos los estudiantes después de registrar uno nuevo
-       
+    //    controlador.mostrarTodosLosEstudiantes(); 
     }
 }

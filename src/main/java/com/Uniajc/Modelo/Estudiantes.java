@@ -37,7 +37,7 @@ public class Estudiantes {
     }
 
     public void setLastName(String aLastName) {
-        this.LastName = LastName;
+        this.LastName = aLastName;
     }
 
     public String getEmail() {
