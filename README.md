@@ -24,3 +24,4 @@ class Grupo{
     +int id_Materia
     +string aula
     +string horario
+}

@@ -1,5 +1,8 @@
 package com.Uniajc.Modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Estudiantes {
      
     private int id;
@@ -7,7 +10,12 @@ public class Estudiantes {
     private String LastName;
     private String Email;
 
-    public Estudiantes() { }
+    private List<InscripcionCurso> inscripciones;
+
+    public Estudiantes() {
+        this.inscripciones = new ArrayList<>();
+    }
+
 
     public Estudiantes(int id, String Name, String LastName, String Email) {
         this.id = id;
