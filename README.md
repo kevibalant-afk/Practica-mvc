@@ -1,27 +1,53 @@
-# Practica-mvc
+# Diagrama del ecosistema
+```mermaid
+classDiagram 
 
-classDiagram
 class Estudiantes {
-    +int id_estudiante
+    
+    +int id_estudiantes
     +string Nombre
     + string Apellido
     + string Email
 }
-class Docente{
-    +int  id_Docente
+
+class Docentes {
+
+    +int  id_docentes
     + string Nombre
     + string Especialidad
 }
-class Materia{
-    +int id_Materia
+
+class Materia {
+    
+    +int id_materia
     + string Nombre_Materia
     + int Creditos
 
 }
-class Grupo{
+class Grupo {
+    
     +int id_grupo
-    +int id_Docente
-    +int id_Materia
+    +int id_docentes
+    +int id_materia
     +string aula
     +string horario
+
 }
+=======
+}
+
+class Inscripcion_Curso {
+
+    +int id_inscripcion
+    +int id_estudiantes
+    +int id_grupo
+    +float nota_final
+    +string estado
+}
+
+Estudiantes "1" -- "*"Inscripcion_Curso : se inscribe
+    Grupo "1" -- "*" Inscripcion_Curso : contiene alumnos
+    Materia "1" -- "*" Grupo : se dicta en
+    Docentes "1" -- "*" Grupo : imparte
+```
+

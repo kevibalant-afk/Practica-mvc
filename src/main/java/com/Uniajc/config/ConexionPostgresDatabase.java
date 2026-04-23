@@ -37,5 +37,3 @@ public class ConexionPostgresDatabase {
         return null;
     }
 }
-   
-

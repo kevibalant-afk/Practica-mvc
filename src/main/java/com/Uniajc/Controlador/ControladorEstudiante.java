@@ -16,9 +16,7 @@ public class ControladorEstudiante {
     }
 
     public void registrarEstudiante() {
-        // Aquí se pueden agregar validaciones o lógica adicional antes de registrar el estudiante
-        // Por ejemplo, verificar que el email tenga un formato válido o que los campos no estén vacíos
-
+        
         try {
             Estudiantes estudiante = vistaEstudiante.solicitarDatosEstudiantes();
 
