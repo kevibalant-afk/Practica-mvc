@@ -15,7 +15,7 @@ public class DocenteDao {
 
     public void guardar(Docente docente) {
                
-        String sql = "INSERT INTO \"practica-mvc\".docentes (Name, Lastname, Specialty) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO \"Practica-MVC\".\"Docentes\" (\"Name\", \"LastName\", \"Specialty\") VALUES (?, ?, ?)";
 
         try (Connection conn = ConexionPostgresDatabase.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -36,7 +36,7 @@ public class DocenteDao {
     public List<Docente> obtenerTodos() {
         List<Docente> docentes = new ArrayList<>();
 
-        String sql = "SELECT id, name, lastname, specialty FROM \"practica-mvc\".docentes";
+        String sql = "SELECT \"id\", \"Name\", \"LastName\", \"Specialty\" FROM \"Practica-MVC\".\"Docentes\"";
 
         try (Connection conn = ConexionPostgresDatabase.getConnection();
              Statement stmt = conn.createStatement();
@@ -45,9 +45,9 @@ public class DocenteDao {
             while (rs.next()) {
                 Docente docente = new Docente();
                 docente.setId(rs.getInt("id"));
-                docente.setName(rs.getString("name"));
-                docente.setLastName(rs.getString("lastname"));
-                docente.setSpecialty(rs.getString("specialty"));
+                docente.setName(rs.getString("Name"));
+                docente.setLastName(rs.getString("LastName"));
+                docente.setSpecialty(rs.getString("Specialty"));
                 docentes.add(docente);
             }
         } catch (SQLException e) {

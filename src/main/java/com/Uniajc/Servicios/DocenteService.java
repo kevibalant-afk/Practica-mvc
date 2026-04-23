@@ -15,9 +15,11 @@ public class DocenteService {
     public void registrarDocente(Docente docente) {
         
         if (docente.getName() == null || docente.getName().isEmpty() ||
-        docente.getSpecialty() == null || docente.getSpecialty().isEmpty()) {
-            throw new IllegalArgumentException("El campo nombre y especialidad son obligatorios.");
-        }
+    docente.getLastName() == null || docente.getLastName().isEmpty() ||
+    docente.getSpecialty() == null || docente.getSpecialty().isEmpty()) {
+
+    throw new IllegalArgumentException("Nombre, apellido y especialidad son obligatorios.");
+}
 
         docenteDao.guardar(docente);
     }

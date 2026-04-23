@@ -1,42 +1,40 @@
 package com.Uniajc.Vista;
 
-
 import java.util.List;
 import java.util.Scanner;
 import com.Uniajc.Modelo.Docente;
 
 public class VistaDocente {
 
-private Scanner scanner;
+    private Scanner scanner;
 
     public VistaDocente() {
         this.scanner = new Scanner(System.in);
     }
 
-    public void mostrarDocente(List<Docente> docente) {
+    public void mostrarDocentes(List<Docente> docentes) {
         System.out.println("Lista de Docentes:");
-        for (Docente docente : docente) {
-            System.out.println("ID: " + docente.getId() + ", Nombre: " + docente.getName() + " " + docente.getLastName() + ", Especialidad: " + docente.getSpecialty());
+        for (Docente docente : docentes) {
+            System.out.println("ID: " + docente.getId() +
+                    ", Nombre: " + docente.getName() + " " + docente.getLastName() +
+                    ", Especialidad: " + docente.getSpecialty());
         }
     }
 
+    // 🔥 CORREGIDO: ahora devuelve un Docente
     public Docente solicitarDatosDocente() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            Docente docente = new Docente();
+        Docente docente = new Docente();
 
-            System.out.print("Ingrese el nombre del docente: ");
-            docente.setName(scanner.nextLine());
+        System.out.print("Ingrese el nombre del docente: ");
+        docente.setName(scanner.nextLine());
 
-            System.out.print("Ingrese el apellido del docente: ");
-            docente.setLastName(scanner.nextLine());
+        System.out.print("Ingrese el apellido del docente: ");
+        docente.setLastName(scanner.nextLine());
 
-            System.out.print("Ingrese la especialidad del docente: ");
-            docente.setSpecialty(scanner.nextLine());
+        System.out.print("Ingrese la especialidad del docente: ");
+        docente.setSpecialty(scanner.nextLine());
 
-            return docente;
-        }
+        return docente; // 🔥 IMPORTANTE
     }
-
-   
-
 }
+
