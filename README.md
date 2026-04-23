@@ -31,9 +31,6 @@ class Grupo {
     +int id_materia
     +string aula
     +string horario
-
-}
-=======
 }
 
 class Inscripcion_Curso {
