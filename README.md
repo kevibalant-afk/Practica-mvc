@@ -1,4 +1,7 @@
 # Diagrama del ecosistema
+KEVIN ADRIAN BALANTA ARIAS
+LUIS FERNANDEZ VIVEROS 
+
 ```mermaid
 classDiagram 
 
