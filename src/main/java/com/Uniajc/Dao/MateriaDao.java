@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import com.Uniajc.config.ConexionPostgresDatabase;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,7 @@ public class MateriaDao {
 
     // Guardar
     public void guardar(Materia materia) {
-        String sql = "INSERT INTO \"Practica-MVC\".\"Materia\" (\"NameMatery\", \"Credits\") VALUES (?, ?)";
+        String sql = "INSERT INTO \"Practica-MVC\".\"Materias\" (\"NameMatery\", \"Credits\") VALUES (?, ?)";
 
         try (Connection conn = ConexionPostgresDatabase.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -39,7 +38,7 @@ public class MateriaDao {
     public List<Materia> obtenerTodos() {
     List<Materia> materias = new ArrayList<>();
 
-    String sql = "SELECT id, \"NameMatery\", \"Credits\" FROM \"Practica-MVC\".\"Materia\"";
+    String sql = "SELECT \"id_Materias\", \"NameMatery\", \"Credits\" FROM \"Practica-MVC\".\"Materias\"";
 
     try (Connection conn = ConexionPostgresDatabase.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -47,7 +46,7 @@ public class MateriaDao {
 
         while (rs.next()) {
             Materia materia = new Materia();
-            materia.setId(rs.getInt("id"));
+            materia.setId(rs.getInt("id_Materias"));
             materia.setNameMatery(rs.getString("NameMatery"));
             materia.setCredits(rs.getInt("Credits"));
             materias.add(materia);

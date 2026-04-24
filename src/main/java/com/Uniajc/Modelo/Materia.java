@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Materia {
 
-    private int id;
+    private int id_Materia;
     private String NameMatery;
     private int Credits;
 
@@ -18,18 +18,18 @@ public class Materia {
 
     // getters y setters...
 
-    public Materia(int id, String nameMatery, int credits) {
-        this.id = id;
+    public Materia(int id_Materia, String nameMatery, int credits) {
+        this.id_Materia = id_Materia;
         this.NameMatery = nameMatery;
         this.Credits = credits;
     }
 
     public int getId() {
-        return id;
+        return id_Materia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_Materia) {
+        this.id_Materia = id_Materia;
     }
 
     public String getNameMatery() {

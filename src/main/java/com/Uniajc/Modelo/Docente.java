@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Docente {
 
-    private int id;
+    private int id_Docentes;
     private String Name;
     private String LastName;
     private String Specialty;
@@ -16,8 +16,8 @@ public class Docente {
         this.grupos = new ArrayList<>();
     }
 
-    public Docente(int id, String Name, String LastName, String Specialty) {
-        this.id = id;
+    public Docente(int id_Docentes, String Name, String LastName, String Specialty) {
+        this.id_Docentes = id_Docentes;
         this.Name = Name;
         this.LastName = LastName;
         this.Specialty = Specialty;
@@ -27,11 +27,11 @@ public class Docente {
     // 🔹 Getters y Setters
 
     public int getId() {
-        return id;
+        return id_Docentes;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_Docentes) {
+        this.id_Docentes = id_Docentes;
     }
 
     public String getName() {
@@ -72,7 +72,7 @@ public class Docente {
     @Override
     public String toString() {
         return "Docente{" +
-                "id=" + id +
+                "id=" + id_Docentes +
                 ", nombre='" + Name + " " + LastName + '\'' +
                 ", especialidad='" + Specialty + '\'' +
                 ", grupos=" + grupos +

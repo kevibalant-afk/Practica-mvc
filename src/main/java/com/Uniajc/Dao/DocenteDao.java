@@ -36,7 +36,7 @@ public class DocenteDao {
     public List<Docente> obtenerTodos() {
         List<Docente> docentes = new ArrayList<>();
 
-        String sql = "SELECT \"id\", \"Name\", \"LastName\", \"Specialty\" FROM \"Practica-MVC\".\"Docentes\"";
+        String sql = "SELECT \"id_Docentes\", \"Name\", \"LastName\", \"Specialty\" FROM \"Practica-MVC\".\"Docentes\"";
 
         try (Connection conn = ConexionPostgresDatabase.getConnection();
              Statement stmt = conn.createStatement();
@@ -44,7 +44,7 @@ public class DocenteDao {
 
             while (rs.next()) {
                 Docente docente = new Docente();
-                docente.setId(rs.getInt("id"));
+                docente.setId(rs.getInt("id_Docentes"));
                 docente.setName(rs.getString("Name"));
                 docente.setLastName(rs.getString("LastName"));
                 docente.setSpecialty(rs.getString("Specialty"));

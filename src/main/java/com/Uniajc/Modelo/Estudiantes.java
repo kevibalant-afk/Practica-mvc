@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Estudiantes {
      
-    private int id;
+    private int id_Estudiantes;
     private String Name;
     private String LastName;
     private String Email;
@@ -17,19 +17,19 @@ public class Estudiantes {
     }
 
 
-    public Estudiantes(int id, String Name, String LastName, String Email) {
-        this.id = id;
+    public Estudiantes(int id_Estudiantes, String Name, String LastName, String Email) {
+        this.id_Estudiantes = id_Estudiantes;
         this.Name = Name;
         this.LastName = LastName;
         this.Email = Email;
     }
 
     public int getId() {
-        return id;
+        return id_Estudiantes;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_Estudiantes) {
+        this.id_Estudiantes = id_Estudiantes;
     }
   
     public String getName() {
@@ -42,6 +42,9 @@ public class Estudiantes {
 
     public String getLastName() {
         return LastName;
+    }
+    public void setLastName(String LastName) {
+        this.LastName = LastName;
     }
 
 

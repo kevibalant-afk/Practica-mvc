@@ -36,14 +36,14 @@ public class EstudianteDao {
         List<Estudiantes> estudiantes = new ArrayList<>();
         
 
-        String sql = "SELECT id, \"Name\", \"LastName\", \"Email\" FROM \"Practica-MVC\". \"Estudiantes\"";
+        String sql = "SELECT id_Estudiantes, \"Name\", \"LastName\", \"Email\" FROM \"Practica-MVC\". \"Estudiantes\"";
         try (Connection conn = ConexionPostgresDatabase.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             
             while (rs.next()) {
                 Estudiantes estudiante = new Estudiantes();
-                estudiante.setId(rs.getInt("id"));
+                estudiante.setId(rs.getInt("id_Estudiantes"));
                 estudiante.setName(rs.getString("Name"));
                 estudiante.setLastName(rs.getString("LastName"));
                 estudiante.setEmail(rs.getString("Email"));

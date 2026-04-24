@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Grupo {
 
-    private int id;
-    private String aula;
-    private String horario;
+    private int id_Grupo;
+    private String Aula;
+    private String Horario;
 
     // 🔥 RELACIONES IMPORTANTES
     private Docente docente;
@@ -19,65 +19,49 @@ public class Grupo {
         this.inscripciones = new ArrayList<>();
     }
 
-    // getters y setters...
-}
-
-public class Grupo {
-    
-    private int id_grupo;
-    private int id_materia;
-    private int id_docente;
-    private String aula;
-    private String horario;
-
-    public Grupo(){}
-
-    public Grupo(int id_grupo, int id_materia, int id_docente, String aula, String horario) {
-        this.id_grupo = id_grupo;
-        this.id_materia = id_materia;
-        this.id_docente = id_docente;
-        this.aula = aula;
-        this.horario = horario;
+    public int getId() {
+        return id_Grupo;
     }
 
-    public int getId_grupo() {
-        return id_grupo;
+    public void setId(int id_Grupo) {
+        this.id_Grupo = id_Grupo;
     }
 
-    public void setId_grupo(int id_grupo) {
-        this.id_grupo = id_grupo;
+    public Materia getMateria() {
+        return materia;
     }
 
-    public int getId_materia() {
-        return id_materia;
+    public void setMateria(Materia materia) {
+        this.materia = materia;
     }
 
-    public void setId_materia(int id_materia) {
-        this.id_materia = id_materia;
+    public Docente getDocente() {
+        return docente;
     }
 
-    public int getId_docente() {
-        return id_docente;
-    }
-
-    public void setId_docente(int id_docente) {
-        this.id_docente = id_docente;
+    public void setDocente(Docente docente) {
+        this.docente = docente;
     }
 
     public String getAula() {
-        return aula;
+        return Aula;
     }
 
-    public void setAula(String aula) {
-        this.aula = aula;
+    public void setAula(String Aula) {
+        this.Aula = Aula;
     }
 
     public String getHorario() {
-        return horario;
+        return Horario;
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
+    public void setHorario(String Horario) {
+        this.Horario = Horario;
+    }
+
+    public Object getNameGroup() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNameGroup'");
     }
 
     
