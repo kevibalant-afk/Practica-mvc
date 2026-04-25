@@ -7,34 +7,35 @@ import com.Uniajc.Vista.VistaEstudiante;
 
 public class ControladorEstudiante {
 
-    private VistaEstudiante vista;
+    private VistaEstudiante vistaEstudiante;
     private EstudianteService servicio;
 
-    public ControladorEstudiante(VistaEstudiante vista, EstudianteService servicio) {
-        this.vista = vista;
+    public ControladorEstudiante(VistaEstudiante vistaEstudiante, EstudianteService servicio) {
+        this.vistaEstudiante = vistaEstudiante;
         this.servicio = servicio;
     }
 
     public void registrarEstudiante() {
         
         try {
-            Estudiantes estudiante = vista.solicitarDatosEstudiantes();
+            Estudiantes estudiante = vistaEstudiante.solicitarDatosEstudiantes();
 
             if (estudiante != null) {
                 servicio.registrarEstudiante(estudiante);
-                vista.mostrarMensaje("Estudiante registrado exitosamente.");
+                vistaEstudiante.mostrarMensaje("Estudiante registrado exitosamente.");
             }
 
         } catch (Exception e) {
-            vista.mostrarMensaje("Error al registrar el estudiante.");
+            vistaEstudiante.mostrarMensaje("Error al registrar el estudiante.");
         }
 
     }
 
     public void mostrarTodosLosEstudiantes() {
         
-        
-        vista.mostrarTodosLosEstudiantes(servicio.obtenerTodosLosEstudiantes());
+        // Llamar al método de la vista para mostrar la lista de estudiantes
+        vistaEstudiante.mostrarTodosLosEstudiantes(servicio.obtenerTodosLosEstudiantes());
     }
+    
 
 }

@@ -1,4 +1,5 @@
 # Diagrama del ecosistema
+
 KEVIN ADRIAN BALANTA ARIAS
 LUIS FERNANDEZ VIVEROS 
 
@@ -48,5 +49,4 @@ class Inscripcion_Curso {
 Estudiantes "1" -- "*"Inscripcion_Curso : se inscribe
     Grupo "1" -- "*" Inscripcion_Curso : contiene alumnos
     Materia "1" -- "*" Grupo : se dicta en
-    Docentes "1" -- "*" Grupo : imparte
-```
+    ```
