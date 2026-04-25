@@ -1,4 +1,4 @@
-package com.Uniajc.Vista;
+https://github.com/kevibalant-afk/Practica-mvc/pull/3/conflict?name=src%252Fmain%252Fjava%252Fcom%252FUniajc%252FVista%252FVistaGrupo.java&ancestor_oid=e69de29bb2d1d6434b8b29ae775ad8c2e48c5391&base_oid=401c4adb10ab9290f1cd473f42dc109de765ef63&head_oid=194bcc6ac5671da9595cd5858c2ab712c51084c9package com.Uniajc.Vista;
 
 import com.Uniajc.Modelo.Grupo;
 import java.util.List;
